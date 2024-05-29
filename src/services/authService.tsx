@@ -8,6 +8,10 @@ const authService = {
     authUser: async (usersFormdata: IAuthUser) => {
         const response = await axiosInstance.post<ITokenObtainPair>(authUrls.auth, usersFormdata)
         localStorage.setItem(tokenKey, JSON.stringify(response.data))
+    },
+    authRef: async (ferrToken: string) => {
+        const response = await axiosInstance.post<ITokenObtainPair>(authUrls.authRefr, {refresh: ferrToken})
+        localStorage.setItem(tokenKey, JSON.stringify(response.data))
     }
 }
 
