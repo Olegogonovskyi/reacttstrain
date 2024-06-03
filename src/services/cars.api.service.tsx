@@ -1,12 +1,14 @@
 import {axiosInstance} from "./api.axios.service";
 import {carsUrls} from "../constants/Urls";
-import {AxiosResponse} from "axios";
+
 import {ICarPaginated} from "../models/ICarPaginated";
 
 const carsService = {
-    getAllCars: async (): Promise<AxiosResponse<ICarPaginated>> => {
+    getAllCars: async (): Promise<ICarPaginated | null> => {
         const carsResponse = await axiosInstance.get(carsUrls.getAllcars)
+        console.log(carsResponse.data)
         return carsResponse.data
+
     }
 }
 
