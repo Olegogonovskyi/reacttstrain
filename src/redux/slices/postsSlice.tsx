@@ -4,7 +4,8 @@ import {postsApiService} from "../../services/posts.api.service";
 import {AxiosError} from "axios";
 
 type postsSliceType = {
-    posts: IPostModel[]
+    posts: IPostModel[],
+
 }
 
 const initialState: postsSliceType = {

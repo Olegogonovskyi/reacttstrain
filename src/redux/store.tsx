@@ -12,7 +12,7 @@ export const store = configureStore({
 
 type RootState = ReturnType<typeof store.getState>;
 type AppDispatch = typeof store.dispatch;
-const useAppDispatch = useDispatch.withTypes<typeof store.dispatch>()
+const useAppDispatch = useDispatch.withTypes<AppDispatch>()
 const useAppSelector = useSelector.withTypes<RootState>();
 
 export {useAppDispatch, useAppSelector}
