@@ -8,6 +8,7 @@ const store = configureStore({
     }
 })
 
+
 type RootState = ReturnType<typeof store.getState>;
 type AppDispatch = typeof store.dispatch;
 const useAppDispatch = useDispatch.withTypes<AppDispatch>()
