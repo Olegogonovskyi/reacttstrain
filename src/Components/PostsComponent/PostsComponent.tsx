@@ -5,14 +5,15 @@ import PostComponent from "../PostComponent";
 
 const PostsComponent: FC = () => {
     const dispatch = useAppDispatch()
-    const posts = useAppSelector(state => state.posts.posts)
+    const {posts, isComplited} = useAppSelector(state => state.posts)
     useEffect(() => {
         dispatch(postsSliceActions.loadPosts())
     }, []);
     return (
         <div>
             {
-                posts.map(post => <PostComponent post={post} key={post.id}/>)
+                isComplited? posts.map(post => <PostComponent post={post} key={post.id}/>):
+                    <h1>Я вантажусь, якщо ти дочитав осе повідомлення, то іди повішся з таким інтернетом</h1>
             }
         </div>
     );
